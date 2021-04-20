@@ -42,15 +42,50 @@ i {
   margin-right: 20px;
 }
 
+img {
+  width: 100%;
+  object-fit: cover;
+}
+
 .header {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 7px;
+  position: relative;
   height: 65px;
+}
+.header__exit {
+  position: absolute;
+  left: 20px;
+  top: 40%;
+  color: #000;
 }
 
 .footer {
+  padding-left: 15px;
+  padding-bottom: 30px;
   background-color: #353535;
+}
+.footer__title {
+  padding-top: 19px;
+  padding-left: 9px;
+  font-family: "Shrikhand", cursive;
+  font-weight: 400;
+  color: #fff;
+}
+.footer__list {
+  padding-top: 13px;
+}
+.footer__list li {
+  margin: 10px;
+}
+.footer__list li .fa-utensils {
+  margin-right: 12px;
+}
+.footer__list li .fa-hands-helping {
+  font-size: 13px;
+  margin-right: 10px;
 }
 
 .section-localisation__localisation {
@@ -82,7 +117,7 @@ i {
 .section-fonctionnement {
   height: 440px;
 }
-.section-fonctionnement__ordered-list li {
+.section-fonctionnement__list li {
   margin: 25px auto;
   border-radius: 20px;
   height: 75px;
@@ -91,13 +126,13 @@ i {
   background-color: #f6f6f6;
   transition: all 0.2s;
 }
-.section-fonctionnement__ordered-list li:hover {
+.section-fonctionnement__list li:hover {
   background-color: #f2eafb;
 }
-.section-fonctionnement__ordered-list li:active {
+.section-fonctionnement__list li:active {
   background-color: #f2eafb;
 }
-.section-fonctionnement__ordered-list li a {
+.section-fonctionnement__list li a {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -105,10 +140,10 @@ i {
   height: 100%;
   transition: all 0.2s;
 }
-.section-fonctionnement__ordered-list li a:hover i {
+.section-fonctionnement__list li a:hover i {
   color: #9356DC;
 }
-.section-fonctionnement__ordered-list li span {
+.section-fonctionnement__list li span {
   display: inline-block;
   position: absolute;
   left: -10px;
@@ -131,11 +166,9 @@ i {
   position: relative;
 }
 .section-restaurants img {
-  width: 100%;
   height: 175px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  object-fit: cover;
 }
 .section-restaurants__btn {
   position: absolute;
@@ -169,7 +202,7 @@ i {
 }
 .section-restaurants__nom-lieu .like:hover {
   opacity: 1;
-  transform: scale(1);
+  transform: scale(1.1);
   color: #ff60d3;
 }
 .section-restaurants__nom-lieu .like:active {
@@ -178,29 +211,114 @@ i {
   color: #ff60d3;
 }
 
-.footer {
-  padding-left: 15px;
-  padding-bottom: 30px;
+.main-menu {
+  background-color: #f6f6f6;
 }
-.footer__title {
-  padding-top: 19px;
-  padding-left: 9px;
+
+.section-menu {
+  position: relative;
+  top: -2.5rem;
+  background-color: #f6f6f6;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+}
+.section-menu__title {
+  position: relative;
   font-family: "Shrikhand", cursive;
   font-weight: 400;
+  font-size: 1.8rem;
+  padding-top: 2rem;
+  padding-left: 1rem;
+}
+.section-menu__title i {
+  position: absolute;
+  top: 35px;
+  right: 20px;
+}
+.section-menu__title .like {
+  opacity: 0;
+  transform: scale(0.4);
+  transition: all 0.2s;
+}
+.section-menu__title .like:hover {
+  opacity: 1;
+  transform: scale(1.1);
+  color: #ff60d3;
+}
+.section-menu__title .like:active {
+  opacity: 1;
+  transform: scale(1);
+  color: #ff60d3;
+}
+.section-menu__subtitle {
+  margin-top: 1rem;
+  padding-left: 1rem;
+  text-transform: uppercase;
+  font-weight: lighter;
+}
+.section-menu__subtitle::after {
+  display: block;
+  content: "";
+  height: 3px;
+  margin-top: 3px;
+  background-color: #99E2D0;
+  width: 2.7rem;
+}
+.section-menu__list li {
+  padding-top: 15px;
+  padding-left: 20px;
+  margin: 25px auto;
+  border-radius: 20px;
+  height: 75px;
+  width: 90%;
+  background-color: #fff;
+  cursor: pointer;
+}
+.section-menu__list li h4 {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+.section-menu__list li div {
+  display: flex;
+}
+.section-menu__list li div :nth-child(1) {
+  font-size: 0.9rem;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.section-menu__list li div :nth-child(2) {
+  font-weight: bold;
+  margin-right: 20px;
+  margin-left: 25px;
+}
+.section-menu__checked {
+  width: 50px;
+  height: 50px;
+  background-color: #99E2D0;
+}
+.section-menu__checked i {
+  color: #99E2D0;
+  border-radius: 50%;
+  padding: 3px;
+  width: 10px;
+  background-color: #fff;
+}
+.section-menu__commander {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 110px;
+}
+.section-menu__btn {
+  background-image: linear-gradient(to bottom right, #FF79DA, #9356DC);
+  padding: 15px;
   color: #fff;
-}
-.footer__unordered-list {
-  padding-top: 13px;
-}
-.footer__unordered-list li {
-  margin: 10px;
-}
-.footer__unordered-list li .fa-utensils {
-  margin-right: 12px;
-}
-.footer__unordered-list li .fa-hands-helping {
-  font-size: 13px;
-  margin-right: 10px;
+  border-radius: 30px;
+  border: none;
+  font-weight: bold;
+  padding: 20px 60px;
 }
 
 /*# sourceMappingURL=style.css.map */

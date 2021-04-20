@@ -1,0 +1,194 @@
+.section-localisation{
+    &__localisation{
+        @include flex-center-center;
+        background-color: $middle-gray;
+        height: 50px;
+        box-shadow: 0 -2px 2px darken($middle-gray, 15%);
+    }
+    &__recherche{
+        @include flex-column-sb-center;
+        background-color: $light-gray;
+        padding: 45px;
+        text-align: center;
+        height: 285px;
+    }
+    &__btn{
+        @include bouton-degrade;
+    }
+}
+
+.section-fonctionnement{
+    height: 440px;
+    h2{
+        @extend %padding-h2-fonctionnement-restaurants;
+    }
+    &__list li{
+        @include div-rectangle;
+        position: relative;
+        background-color: $light-gray;
+        transition: all 0.2s;
+        &:hover{
+            background-color: lighten($color-primary, 35%);
+        }
+        &:active{
+            background-color: lighten($color-primary, 35%);
+        }
+        a{
+            @include flex-center-center;
+            width: 100%;
+            height: 100%;
+            transition: all 0.2s;
+            &:hover i{
+                color: $color-primary;
+            }
+        }
+        span{
+            display: inline-block;
+            position: absolute;
+            left: -10px;
+            top: 35%;
+            border-radius: 50%;
+            background-color: $color-primary;
+            color: $white;
+            padding: 3px 7px;
+        }
+    }
+}
+
+.section-restaurants{
+    background-color: $light-gray;
+    padding-bottom: 50px;
+    h2{
+        @extend %padding-h2-fonctionnement-restaurants;
+    }
+    &__card{
+        width: 90%;
+        margin: 15px auto;
+        background-color: $white;
+        border-radius: $border-radius;
+        position: relative;
+    }
+    img{
+        height: 175px;
+        border-top-left-radius: $border-radius;
+        border-top-right-radius: $border-radius;
+    }
+    &__btn{
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background-color: $color-tertiary;
+        color: darken($color-tertiary, 40%);
+        border-radius: 2px;
+        border: none;
+        padding: 5px 9px;
+        
+    }
+    &__nom-lieu{
+        position: relative;
+        height: 60px;
+        padding-left: 10px;
+        h4{
+            margin: 10px 0;
+        }
+        i{
+            background-color: #fff;
+            font-size: 25px;
+            position: absolute;
+            top: 25%;
+            right: 0;     
+        }
+        .like{
+            @include heart-like;
+        }
+    }
+}
+
+.main-menu{
+    background-color: $light-gray;
+}
+
+.section-menu{
+    position: relative;
+    top: -2.5rem;
+    background-color: $light-gray;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    &__title{
+        position: relative;
+        font-family: 'Shrikhand', cursive;
+        font-weight: 400;
+        font-size: 1.8rem;
+        padding-top: 2rem;
+        padding-left: 1rem;
+        i{
+            position: absolute;
+            top: 35px;
+            right: 20px;
+        }
+        .like{
+            @include heart-like;
+        }
+    }
+    &__subtitle{
+        margin-top: 1rem;
+        padding-left: 1rem;
+        text-transform: uppercase;
+        font-weight: lighter;
+        &::after{
+            display: block;
+            content: "";
+            height: 3px;
+            margin-top: 3px;
+            background-color: $color-tertiary;
+            width: 2.7rem;
+        }
+    }
+    &__list li{
+        padding-top: 15px;
+        padding-left: 20px;
+        @include div-rectangle;
+        background-color: $white;
+        cursor: pointer;
+        h4{
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        div{
+            display: flex;
+        }
+        div :nth-child(1){
+            font-size: 0.9rem;
+            width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        div :nth-child(2){
+            font-weight: bold;
+            margin-right: 20px;
+            margin-left: 25px;
+        }
+    }
+    &__checked{
+        width: 50px;
+        height: 50px;
+        background-color: $color-tertiary;
+        i{
+            color: $color-tertiary;
+            border-radius: 50%;
+            padding: 3px;
+            width: 10px;
+            background-color: $white;
+        }
+    }
+    &__commander{
+        @include flex-center-center;
+        height: 110px;
+    }
+    &__btn{
+        @include bouton-degrade;
+        font-weight: bold;
+        padding: 20px 60px;
+    }
+}

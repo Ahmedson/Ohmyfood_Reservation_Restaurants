@@ -1,0 +1,43 @@
+@mixin flex-center-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-column-sb-center{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+@mixin bouton-degrade{
+    background-image: linear-gradient(to bottom right, $color-secondary, $color-primary); 
+    padding: 15px;
+    color: $white;
+    border-radius: 30px;
+    border: none;
+}
+
+@mixin div-rectangle{
+    margin: 25px auto;
+    border-radius: $border-radius;
+    height: 75px;
+    width: 90%;
+}
+
+@mixin heart-like{
+    opacity: 0;
+    transform: scale(0.4);
+    transition: all 0.2s;
+    &:hover{
+        opacity: 1;
+        transform: scale(1.1);
+        color: darken($color-secondary, 5%);
+    }
+    &:active{
+        opacity: 1;
+        transform: scale(1);
+        color: darken($color-secondary, 5%);
+    }
+}
