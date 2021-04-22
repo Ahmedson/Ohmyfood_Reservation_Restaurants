@@ -67,11 +67,23 @@
         background-color: $white;
         border-radius: $border-radius;
         position: relative;
+        @include box-shadow;
     }
-    img{
+    .image{
         height: 175px;
-        border-top-left-radius: $border-radius;
-        border-top-right-radius: $border-radius;
+        overflow: hidden;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        img{
+            // height: 175px;
+            border-top-left-radius: $border-radius;
+            border-top-right-radius: $border-radius;
+            position: relative;
+            top: -55px;
+        }
+        .la-note-enchantee{
+            top: -150px;
+        }
     }
     &__btn{
         position: absolute;
@@ -82,24 +94,19 @@
         border-radius: 2px;
         border: none;
         padding: 5px 9px;
+        font-size: 15px;
+        z-index: 1;
         
+    }
+    &__btn-heart{
+        @include btn-heart-like;
     }
     &__nom-lieu{
         position: relative;
         height: 60px;
-        padding-left: 10px;
+        padding-left: 15px;
         h4{
-            margin: 10px 0;
-        }
-        i{
-            background-color: #fff;
-            font-size: 25px;
-            position: absolute;
-            top: 25%;
-            right: 0;     
-        }
-        .like{
-            @include heart-like;
+            margin: 15px 0 5px 0;
         }
     }
 }
@@ -121,14 +128,13 @@
         font-size: 1.8rem;
         padding-top: 2rem;
         padding-left: 1rem;
-        i{
-            position: absolute;
-            top: 35px;
-            right: 20px;
-        }
-        .like{
-            @include heart-like;
-        }
+    }
+    &__btn-heart{
+            @include btn-heart-like;
+            top: 50%;
+            .like{
+                background-color: $light-gray;
+            }
     }
     &__subtitle{
         margin-top: 1rem;
@@ -145,41 +151,72 @@
         }
     }
     &__list li{
-        padding-top: 15px;
-        padding-left: 20px;
+        display: flex;
         @include div-rectangle;
+        @include box-shadow;
         background-color: $white;
+        padding: 10px;
         cursor: pointer;
-        h4{
-            font-size: 1.1rem;
-            margin-bottom: 5px;
+        overflow: hidden;
+        &:hover .section-menu__container-checked{
+            margin-right: -0.7rem;
         }
-        div{
-            display: flex;
+        &:hover .section-menu__checked{
+            transform: rotate(0);
         }
-        div :nth-child(1){
-            font-size: 0.9rem;
-            width: 100%;
+        .name-lunch{
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+            flex: 1;
+            h4{
+                font-size: 1.1rem;
+                margin-top: 0.3rem;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            p{
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis; 
+                font-size: 0.9rem;
+                color: lighten($black, 40%);
+            }
         }
-        div :nth-child(2){
+        .price{
             font-weight: bold;
-            margin-right: 20px;
-            margin-left: 25px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            margin-bottom: 0.3rem;
+            margin-right: 0.5rem;
+            margin-left: 1rem;
         }
     }
-    &__checked{
-        width: 50px;
-        height: 50px;
+    &__container-checked{
+        width: 4rem;
         background-color: $color-tertiary;
+        @include flex-center-center;
+        margin-top: -0.7rem;
+        margin-bottom: -0.7rem;
+        margin-left: 1rem;
+        margin-right: -4.7rem;
+        transition: all 0.5s;
+    }
+    &__checked{
+        height: 25px;
+        width: 25px;
+        border-radius: 50%;
+        background-color: $white;
+        transform: rotate(180deg);
+        transition: all 0.5s;
         i{
             color: $color-tertiary;
-            border-radius: 50%;
-            padding: 3px;
-            width: 10px;
-            background-color: $white;
+            position: relative;
+            left: 5px;
+            top: 3px;
         }
     }
     &__commander{

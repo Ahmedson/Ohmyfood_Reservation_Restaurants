@@ -164,11 +164,22 @@ img {
   background-color: #fff;
   border-radius: 20px;
   position: relative;
+  box-shadow: 0 0 7px #d1d1d1;
 }
-.section-restaurants img {
+.section-restaurants .image {
   height: 175px;
+  overflow: hidden;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
+}
+.section-restaurants .image img {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  position: relative;
+  top: -55px;
+}
+.section-restaurants .image .la-note-enchantee {
+  top: -150px;
 }
 .section-restaurants__btn {
   position: absolute;
@@ -179,36 +190,43 @@ img {
   border-radius: 2px;
   border: none;
   padding: 5px 9px;
+  font-size: 15px;
+  z-index: 1;
+}
+.section-restaurants__btn-heart {
+  height: 2.1rem;
+  width: 2.1rem;
+  position: absolute;
+  top: 15%;
+  right: 0;
+  margin-right: 1rem;
+  transition: all 0.5s;
+}
+.section-restaurants__btn-heart:hover {
+  background: linear-gradient(to top right, #FF79DA, #9356DC 90%);
+  opacity: 1;
+}
+.section-restaurants__btn-heart:hover .empty {
+  opacity: 0;
+}
+.section-restaurants__btn-heart i {
+  font-size: 1.5rem;
+  position: absolute;
+  transition: all 0.3s;
+}
+.section-restaurants__btn-heart .like {
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+  mix-blend-mode: lighten;
 }
 .section-restaurants__nom-lieu {
   position: relative;
   height: 60px;
-  padding-left: 10px;
+  padding-left: 15px;
 }
 .section-restaurants__nom-lieu h4 {
-  margin: 10px 0;
-}
-.section-restaurants__nom-lieu i {
-  background-color: #fff;
-  font-size: 25px;
-  position: absolute;
-  top: 25%;
-  right: 0;
-}
-.section-restaurants__nom-lieu .like {
-  opacity: 0;
-  transform: scale(0.4);
-  transition: all 0.2s;
-}
-.section-restaurants__nom-lieu .like:hover {
-  opacity: 1;
-  transform: scale(1.1);
-  color: #ff60d3;
-}
-.section-restaurants__nom-lieu .like:active {
-  opacity: 1;
-  transform: scale(1);
-  color: #ff60d3;
+  margin: 15px 0 5px 0;
 }
 
 .main-menu {
@@ -230,25 +248,36 @@ img {
   padding-top: 2rem;
   padding-left: 1rem;
 }
-.section-menu__title i {
+.section-menu__btn-heart {
+  height: 2.1rem;
+  width: 2.1rem;
   position: absolute;
-  top: 35px;
-  right: 20px;
+  top: 15%;
+  right: 0;
+  margin-right: 1rem;
+  transition: all 0.5s;
+  top: 50%;
 }
-.section-menu__title .like {
+.section-menu__btn-heart:hover {
+  background: linear-gradient(to top right, #FF79DA, #9356DC 90%);
+  opacity: 1;
+}
+.section-menu__btn-heart:hover .empty {
   opacity: 0;
-  transform: scale(0.4);
-  transition: all 0.2s;
 }
-.section-menu__title .like:hover {
-  opacity: 1;
-  transform: scale(1.1);
-  color: #ff60d3;
+.section-menu__btn-heart i {
+  font-size: 1.5rem;
+  position: absolute;
+  transition: all 0.3s;
 }
-.section-menu__title .like:active {
-  opacity: 1;
-  transform: scale(1);
-  color: #ff60d3;
+.section-menu__btn-heart .like {
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+  mix-blend-mode: lighten;
+}
+.section-menu__btn-heart .like {
+  background-color: #f6f6f6;
 }
 .section-menu__subtitle {
   margin-top: 1rem;
@@ -265,45 +294,78 @@ img {
   width: 2.7rem;
 }
 .section-menu__list li {
-  padding-top: 15px;
-  padding-left: 20px;
+  display: flex;
   margin: 25px auto;
   border-radius: 20px;
   height: 75px;
   width: 90%;
+  box-shadow: 0 0 7px #d1d1d1;
   background-color: #fff;
+  padding: 10px;
   cursor: pointer;
+  overflow: hidden;
 }
-.section-menu__list li h4 {
+.section-menu__list li:hover .section-menu__container-checked {
+  margin-right: -0.7rem;
+}
+.section-menu__list li:hover .section-menu__checked {
+  transform: rotate(0);
+}
+.section-menu__list li .name-lunch {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+}
+.section-menu__list li .name-lunch h4 {
   font-size: 1.1rem;
+  margin-top: 0.3rem;
   margin-bottom: 5px;
-}
-.section-menu__list li div {
-  display: flex;
-}
-.section-menu__list li div :nth-child(1) {
-  font-size: 0.9rem;
-  width: 100%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.section-menu__list li div :nth-child(2) {
+.section-menu__list li .name-lunch p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.9rem;
+  color: #666666;
+}
+.section-menu__list li .price {
   font-weight: bold;
-  margin-right: 20px;
-  margin-left: 25px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-bottom: 0.3rem;
+  margin-right: 0.5rem;
+  margin-left: 1rem;
+}
+.section-menu__container-checked {
+  width: 4rem;
+  background-color: #99E2D0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -0.7rem;
+  margin-bottom: -0.7rem;
+  margin-left: 1rem;
+  margin-right: -4.7rem;
+  transition: all 0.5s;
 }
 .section-menu__checked {
-  width: 50px;
-  height: 50px;
-  background-color: #99E2D0;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  background-color: #fff;
+  transform: rotate(180deg);
+  transition: all 0.5s;
 }
 .section-menu__checked i {
   color: #99E2D0;
-  border-radius: 50%;
-  padding: 3px;
-  width: 10px;
-  background-color: #fff;
+  position: relative;
+  left: 5px;
+  top: 3px;
 }
 .section-menu__commander {
   display: flex;
