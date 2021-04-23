@@ -11,24 +11,39 @@
     align-items: center;
 }
 
+@mixin box-shadow($pourcentage-darken){
+    box-shadow: 0 0 7px darken($middle-gray, $pourcentage-darken);
+}
+
+
 @mixin bouton-degrade{
-    background-image: linear-gradient(to bottom right, $color-secondary, $color-primary); 
-    padding: 15px;
+    background-image: linear-gradient(to bottom, $color-secondary, $color-primary); 
+    padding: 1rem 1.2rem;
     color: $white;
+    font-weight: bold;
     border-radius: 30px;
     border: none;
+    @include box-shadow(30%);
+    transition: all .3s;
+    &:hover{
+        background-image: linear-gradient(to bottom, lighten($color-secondary, 3%), lighten($color-primary, 3%)); 
+        box-shadow: 0.1rem 0.2rem 0.5rem darken($middle-gray, 50%);
+    }
+
+
+
 }
 
 @mixin div-rectangle{
-    margin: 25px auto;
+    margin: 20px auto;
     border-radius: $border-radius;
     height: 75px;
     width: 90%;
 }
 
 @mixin btn-heart-like{
-    height: 2.1rem;
-    width: 2.1rem;
+    height: 1.5rem;
+    width: 1.6rem;
     position: absolute;
     top: 15%;
     right: 0;
@@ -52,9 +67,6 @@
         background-color: $white;
         mix-blend-mode: lighten;
     }
-}
-@mixin box-shadow{
-    box-shadow: 0 0 7px darken($middle-gray, 10%);
 }
 
 // @mixin heart-like{

@@ -88,6 +88,50 @@ img {
   margin-right: 10px;
 }
 
+@keyframes animation-apparition-div {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  25% {
+    opacity: 0.2;
+    transform: translateY(7px);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateY(5px);
+  }
+  75% {
+    opacity: 0.7;
+    transform: translateY(3px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes animation-titres-entrees-plats-dessert {
+  0% {
+    opacity: 0;
+    transform: scale(0.2);
+  }
+  25% {
+    opacity: 0.2;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.5);
+  }
+  75% {
+    opacity: 0.7;
+    transform: scale(0.7);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 .section-localisation__localisation {
   display: flex;
   justify-content: center;
@@ -107,18 +151,25 @@ img {
   height: 285px;
 }
 .section-localisation__btn {
-  background-image: linear-gradient(to bottom right, #FF79DA, #9356DC);
-  padding: 15px;
+  background-image: linear-gradient(to bottom, #FF79DA, #9356DC);
+  padding: 1rem 1.2rem;
   color: #fff;
+  font-weight: bold;
   border-radius: 30px;
   border: none;
+  box-shadow: 0 0 7px #9e9e9e;
+  transition: all 0.3s;
+}
+.section-localisation__btn:hover {
+  background-image: linear-gradient(to bottom, #ff88de, #9b63df);
+  box-shadow: 0.1rem 0.2rem 0.5rem #6b6b6b;
 }
 
 .section-fonctionnement {
   height: 440px;
 }
 .section-fonctionnement__list li {
-  margin: 25px auto;
+  margin: 20px auto;
   border-radius: 20px;
   height: 75px;
   width: 90%;
@@ -194,8 +245,8 @@ img {
   z-index: 1;
 }
 .section-restaurants__btn-heart {
-  height: 2.1rem;
-  width: 2.1rem;
+  height: 1.5rem;
+  width: 1.6rem;
   position: absolute;
   top: 15%;
   right: 0;
@@ -232,6 +283,17 @@ img {
 .main-menu {
   background-color: #f6f6f6;
 }
+.main-menu h3 {
+  transform: scale(0);
+  animation: animation-titres-entrees-plats-dessert 0.3s;
+  animation-fill-mode: both;
+}
+.main-menu .plats {
+  animation-delay: 0.3s;
+}
+.main-menu .desserts {
+  animation-delay: 0.9s;
+}
 
 .section-menu {
   position: relative;
@@ -249,8 +311,8 @@ img {
   padding-left: 1rem;
 }
 .section-menu__btn-heart {
-  height: 2.1rem;
-  width: 2.1rem;
+  height: 1.5rem;
+  width: 1.6rem;
   position: absolute;
   top: 15%;
   right: 0;
@@ -295,7 +357,7 @@ img {
 }
 .section-menu__list li {
   display: flex;
-  margin: 25px auto;
+  margin: 20px auto;
   border-radius: 20px;
   height: 75px;
   width: 90%;
@@ -304,6 +366,9 @@ img {
   padding: 10px;
   cursor: pointer;
   overflow: hidden;
+  opacity: 0;
+  animation: animation-apparition-div 0.5s;
+  animation-fill-mode: both;
 }
 .section-menu__list li:hover .section-menu__container-checked {
   margin-right: -0.7rem;
@@ -341,6 +406,30 @@ img {
   margin-right: 0.5rem;
   margin-left: 1rem;
 }
+.section-menu__list.starter-list li:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.section-menu__list.starter-list li:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.section-menu__list.main-list li:nth-child(1) {
+  animation-delay: 0.6s;
+}
+.section-menu__list.main-list li:nth-child(2) {
+  animation-delay: 0.8s;
+}
+.section-menu__list.main-list li:nth-child(3) {
+  animation-delay: 1s;
+}
+.section-menu__list.dessert-list li:nth-child(1) {
+  animation-delay: 1.2s;
+}
+.section-menu__list.dessert-list li:nth-child(2) {
+  animation-delay: 1.4s;
+}
+.section-menu__list.dessert-list li:nth-child(3) {
+  animation-delay: 1.6s;
+}
 .section-menu__container-checked {
   width: 4rem;
   background-color: #99E2D0;
@@ -374,13 +463,19 @@ img {
   height: 110px;
 }
 .section-menu__btn {
-  background-image: linear-gradient(to bottom right, #FF79DA, #9356DC);
-  padding: 15px;
+  background-image: linear-gradient(to bottom, #FF79DA, #9356DC);
+  padding: 1rem 1.2rem;
   color: #fff;
+  font-weight: bold;
   border-radius: 30px;
   border: none;
-  font-weight: bold;
-  padding: 20px 60px;
+  box-shadow: 0 0 7px #9e9e9e;
+  transition: all 0.3s;
+  padding: 1.1rem 3.7rem;
+}
+.section-menu__btn:hover {
+  background-image: linear-gradient(to bottom, #ff88de, #9b63df);
+  box-shadow: 0.1rem 0.2rem 0.5rem #6b6b6b;
 }
 
 /*# sourceMappingURL=style.css.map */
