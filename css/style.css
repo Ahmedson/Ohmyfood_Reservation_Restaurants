@@ -13,6 +13,7 @@
 
 html {
   font-family: "Roboto", sans-serif;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -159,6 +160,16 @@ img {
     transform: translateY(0);
   }
 }
+@keyframes animation-apparition-logo-loader {
+  0% {
+    opacity: 0;
+    transform: translateY(300px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 @keyframes animation-titres-entrees-plats-dessert {
   0% {
     opacity: 0;
@@ -181,6 +192,67 @@ img {
     transform: scale(1);
   }
 }
+@keyframes progress-bar {
+  0% {
+    transform: scaleX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+@keyframes disparition-container-loader {
+  90% {
+    opacity: 1;
+  }
+  99% {
+    transform: translateX(0);
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(9999px);
+  }
+}
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  animation: disparition-container-loader 3s;
+  animation-fill-mode: forwards;
+}
+#container .loader__logo {
+  width: 50%;
+  margin-top: 5%;
+  animation: animation-apparition-logo-loader 2.5s ease-in;
+}
+@media all and (min-width: 1030px) {
+  #container .loader__logo {
+    width: 30%;
+    margin-top: 2%;
+  }
+}
+#container .progress {
+  width: 50%;
+  margin: auto;
+  border-radius: 3px;
+  border: 3px solid black;
+}
+#container .progress__bar {
+  transform-origin: left;
+  height: 2rem;
+  background-image: linear-gradient(to bottom, #FF79DA, #9356DC);
+  animation: progress-bar 2.5s ease-in;
+}
+
 @media all and (min-width: 1030px) {
   .section-localisation {
     overflow: hidden;
@@ -455,7 +527,6 @@ img {
   }
 }
 .section-menu__title {
-  position: relative;
   font-family: "Shrikhand", cursive;
   font-weight: 400;
   font-size: 1.8rem;
@@ -470,7 +541,8 @@ img {
   right: 0;
   margin-right: 1rem;
   transition: all 0.5s;
-  top: 7%;
+  top: 3%;
+  margin-right: 7%;
 }
 @media all and (min-width: 750px) {
   .section-menu__btn-heart {
@@ -500,6 +572,11 @@ img {
   width: 100%;
   background-color: #fff;
   mix-blend-mode: lighten;
+}
+@media all and (min-width: 1030px) {
+  .section-menu__btn-heart {
+    top: 7%;
+  }
 }
 .section-menu__btn-heart .like {
   background-color: #f6f6f6;
@@ -536,7 +613,13 @@ img {
 .section-menu__list li:hover .section-menu__container-checked {
   margin-right: -0.7rem;
 }
+.section-menu__list li:active .section-menu__container-checked {
+  margin-right: -0.7rem;
+}
 .section-menu__list li:hover .section-menu__checked {
+  transform: rotate(0);
+}
+.section-menu__list li:active .section-menu__checked {
   transform: rotate(0);
 }
 .section-menu__list li .name-lunch {
