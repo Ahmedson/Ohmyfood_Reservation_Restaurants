@@ -8,13 +8,32 @@ html{
     font-family: 'Roboto', sans-serif;
 }
 
+body{
+    max-width: 1500px;
+    margin: auto;
+}
+
+.main-container{
+    @include desktop{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around; 
+        margin: auto 4.2rem;
+        height: 100%;
+    }
+}
+
 h2{
     font-weight: bold;
+    @include ipad{
+        text-align: center;
+        margin-bottom: 2rem;
+    }
 }
 
 button{
     cursor: pointer;
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 main a, img{
@@ -32,7 +51,7 @@ ul, ol{
 }
 
 i{
-    margin-right: 20px;
+    margin-right: 1.3rem;
 }
 
 img{

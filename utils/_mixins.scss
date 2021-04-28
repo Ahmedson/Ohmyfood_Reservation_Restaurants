@@ -1,27 +1,61 @@
+%padding-h2-fonctionnement-restaurants{
+    padding-top: 3rem;
+    padding-left: 1.3rem;
+}
+
+@mixin ipad {
+    @media all and (min-width: map-get($breakpoints, ipad)) {
+        @content;
+  }
+}
+
+@mixin desktop {
+    @media all and (min-width: map-get($breakpoints, desktop)) {
+        @content;
+    }
+}
+
+@mixin desktop-plus {
+    @media all and (min-width: map-get($breakpoints, desktop-plus)) {
+        @content;
+    }
+}
+
+@mixin high-height {
+    @media all and (min-height: map-get($breakpoints, high-height)) {
+        @content;
+    }
+}
+
 @mixin flex-center-center{
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-@mixin flex-column-sb-center{
+@mixin flex-column-sa-center{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
 }
 
-@mixin box-shadow($pourcentage-darken){
-    box-shadow: 0 0 7px darken($middle-gray, $pourcentage-darken);
+@mixin nowrap-hidden-ellipsis{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
+@mixin box-shadow($pourcentage-darken){
+    box-shadow: 0 0 0.5rem darken($middle-gray, $pourcentage-darken);
+}
 
 @mixin bouton-degrade{
     background-image: linear-gradient(to bottom, $color-secondary, $color-primary); 
     padding: 1rem 1.2rem;
     color: $white;
     font-weight: bold;
-    border-radius: 30px;
+    border-radius: 1.9rem;
     border: none;
     @include box-shadow(30%);
     transition: all .3s;
@@ -29,15 +63,12 @@
         background-image: linear-gradient(to bottom, lighten($color-secondary, 3%), lighten($color-primary, 3%)); 
         box-shadow: 0.1rem 0.2rem 0.5rem darken($middle-gray, 50%);
     }
-
-
-
 }
 
 @mixin div-rectangle{
-    margin: 20px auto;
+    margin: 1.2rem auto;
     border-radius: $border-radius;
-    height: 75px;
+    height: 4.7rem;
     width: 90%;
 }
 
@@ -49,6 +80,9 @@
     right: 0;
     margin-right: 1rem;
     transition: all .5s;
+    @include ipad{
+        margin-right: 5%;
+    }
     &:hover{ 
         background: linear-gradient( to top right, $color-secondary, $color-primary 90%);
         opacity: 1;
@@ -59,7 +93,11 @@
     i{
         font-size: 1.5rem;
         position: absolute;
-        transition: all .3s;  
+        transition: all .3s;
+        @include ipad{
+            top: 0;
+            left: 0;
+        } 
     }
     .like{
         height: 100%;
