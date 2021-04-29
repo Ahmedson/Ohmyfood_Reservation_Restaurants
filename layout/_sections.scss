@@ -9,6 +9,17 @@
     }
 }
 
+@keyframes animation-titres-entrees-plats-dessert{
+    0%{
+        opacity: 0;
+        transform: scale(0.2);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
 @keyframes animation-apparition-logo-loader{
     0%{
         opacity: 0;
@@ -20,36 +31,13 @@
     }
 }
 
-@keyframes animation-titres-entrees-plats-dessert{
-    0%{
-        opacity: 0;
-        transform: scale(0.2);
-    }
-    25%{
-        opacity: 0.2;
-        transform: scale(0.3);
-    }
-    50%{
-        opacity: 0.5;
-        transform: scale(0.5);
-    }
-    75%{
-        opacity: 0.7;
-        transform: scale(0.7);
-    }
-    100%{
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
 @keyframes progress-bar{
     0%{
         transform: scaleX(0);
         opacity: 1;
     }
     100%{ 
-    transform: scaleX(1);
+        transform: scaleX(1);
     }
     
 }
@@ -68,11 +56,9 @@
     }
 }
 
-#container{
+#container{ // loader's container
     @include flex-center-center;
     flex-direction: column;
-    // max-width: 1600px;
-    // margin: auto;
     position: fixed;
     z-index: 999;
     top: 0; left: 0; right: 0; bottom: 0;
@@ -84,15 +70,15 @@
         margin-top: 5%;
         animation: animation-apparition-logo-loader 2.5s ease-in;
         @include desktop{
-            width: 30%;
+            width: 20%;
             margin-top: 2%;
         }
     }
     .progress{
         width: 50%;
         margin: auto;
-        border-radius: 3px;
-        border: 3px solid black;
+        border-radius: 0.3rem;
+        border: 0.2rem solid black;
         &__bar{
             transform-origin: left;
             height: 2rem;
@@ -149,8 +135,7 @@
         transition: all 0.2s;
         @include desktop{
             width: 30%;
-        @include box-shadow(30%);
-
+            @include box-shadow(30%);
         }
         &:hover{
             background-color: lighten($color-primary, 35%);
@@ -184,7 +169,6 @@
     background-color: $light-gray;
     padding-bottom: 3.1rem;
     @include desktop{
-        overflow: hidden;
         border-radius: $border-radius;
         margin-bottom: 4.2rem;
         @include box-shadow(30%);
@@ -204,6 +188,7 @@
         background-color: $white;
         border-radius: $border-radius;
         position: relative;
+        overflow: hidden;
         @include box-shadow(10%);
     }
     .image{ // div contenant l'image
@@ -231,7 +216,7 @@
             }
         }
     }
-    &__btn{
+    &__btn{ // bouton new
         position: absolute;
         top: 1rem;
         right: 1rem;
@@ -325,7 +310,7 @@
                 background-color: $light-gray;
             }
     }
-    &__subtitle{
+    &__subtitle{ // entrées - plats - desserts
         margin-top: 1rem;
         padding-left: 1rem;
         text-transform: uppercase;
@@ -353,13 +338,7 @@
         &:hover .section-menu__container-checked{
             margin-right: -0.7rem;
         }
-        &:active .section-menu__container-checked{
-            margin-right: -0.7rem;
-        }
         &:hover .section-menu__checked{
-            transform: rotate(0);
-        }
-        &:active .section-menu__checked{
             transform: rotate(0);
         }
         .name-lunch{
@@ -424,10 +403,7 @@
         width: 4rem;
         background-color: $color-tertiary;
         @include flex-center-center;
-        margin-top: -0.7rem;
-        margin-bottom: -0.7rem;
-        margin-left: 1rem;
-        margin-right: -4.7rem;
+        margin: -0.7rem -4.7rem -0.7rem 1rem;
         transition: all 0.5s;
     }
     &__checked{
