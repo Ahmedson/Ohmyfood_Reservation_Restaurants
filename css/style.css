@@ -635,6 +635,36 @@ input {
   animation: animation-apparition-div 0.5s;
   animation-fill-mode: both;
 }
+.section-menu__list li.delay-0 {
+  animation-delay: 0s;
+}
+.section-menu__list li.delay-1 {
+  animation-delay: 0.2s;
+}
+.section-menu__list li.delay-2 {
+  animation-delay: 0.4s;
+}
+.section-menu__list li.delay-3 {
+  animation-delay: 0.6s;
+}
+.section-menu__list li.delay-4 {
+  animation-delay: 0.8s;
+}
+.section-menu__list li.delay-5 {
+  animation-delay: 1s;
+}
+.section-menu__list li.delay-6 {
+  animation-delay: 1.2s;
+}
+.section-menu__list li.delay-7 {
+  animation-delay: 1.4s;
+}
+.section-menu__list li.delay-8 {
+  animation-delay: 1.6s;
+}
+.section-menu__list li.delay-9 {
+  animation-delay: 1.8s;
+}
 .section-menu__list li:hover .section-menu__container-checked {
   margin-right: -0.7rem;
 }
@@ -670,33 +700,6 @@ input {
   margin-bottom: 0.3rem;
   margin-right: 0.5rem;
   margin-left: 1rem;
-}
-.section-menu__list.starter-list li:nth-child(2) {
-  animation-delay: 0.2s;
-}
-.section-menu__list.starter-list li:nth-child(3) {
-  animation-delay: 0.4s;
-}
-.section-menu__list.starter-list li:nth-child(4) {
-  animation-delay: 0.5s;
-}
-.section-menu__list.main-list li:nth-child(1) {
-  animation-delay: 0.6s;
-}
-.section-menu__list.main-list li:nth-child(2) {
-  animation-delay: 0.8s;
-}
-.section-menu__list.main-list li:nth-child(3) {
-  animation-delay: 1s;
-}
-.section-menu__list.dessert-list li:nth-child(1) {
-  animation-delay: 1.2s;
-}
-.section-menu__list.dessert-list li:nth-child(2) {
-  animation-delay: 1.4s;
-}
-.section-menu__list.dessert-list li:nth-child(3) {
-  animation-delay: 1.6s;
 }
 .section-menu__container-checked {
   width: 4rem;
