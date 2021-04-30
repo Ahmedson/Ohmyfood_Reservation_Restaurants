@@ -93,7 +93,8 @@
         overflow: hidden;
         border-radius: $border-radius;
         @include box-shadow(30%);
-
+        transition: all 0.3s;
+        @include zoom-on-hover;
     }
     &__localisation{
         @include flex-center-center;
@@ -107,6 +108,11 @@
         padding: 2.8rem;
         text-align: center;
         height: 17.8rem;
+        h2{
+            @include desktop{
+                margin-bottom: 0;
+            }
+        }
     }
     &__btn{
         @include bouton-degrade;
@@ -136,6 +142,7 @@
         @include desktop{
             width: 30%;
             @include box-shadow(30%);
+            @include zoom-on-hover;
         }
         &:hover{
             background-color: lighten($color-primary, 35%);
@@ -172,6 +179,7 @@
         border-radius: $border-radius;
         margin-bottom: 4.2rem;
         @include box-shadow(30%);
+        @include zoom-on-hover;
     }
     h2{
         @extend %padding-h2-fonctionnement-restaurants;
@@ -190,6 +198,9 @@
         position: relative;
         overflow: hidden;
         @include box-shadow(10%);
+        @include desktop{
+            @include zoom-on-hover;
+        }
     }
     .image{ // div contenant l'image
         height: 11rem;
@@ -253,6 +264,7 @@
         @include desktop{
             border-radius: $border-radius;
             @include box-shadow(40%);
+            @include zoom-on-hover;
         }
     }
     h3{
@@ -280,6 +292,7 @@
         margin-bottom: 4.2rem;
         top: 0;
         @include box-shadow(20%);
+        @include zoom-on-hover;
     }
     .all-menu-container{
         @include desktop{
@@ -430,3 +443,46 @@
     }
 }
 
+// loader spinner
+
+#loader__logo{
+    width: 50%;
+    margin-top: 5%;
+    position: absolute;
+    top: 0;
+}
+
+.loader {
+    width: 11rem;
+    height: 11rem;
+    border-radius: 50%;
+    background-image: linear-gradient(to bottom, $color-primary , $color-secondary) ; 
+    position: relative;
+    animation: load3 3s infinite linear;
+  }
+  .loader:before {
+    width: 50%;
+    height: 50%;
+    background-color: $white;
+    position: absolute;
+    content: '';
+  }
+  .loader:after {
+    background-color: $white;
+    width: 75%;
+    height: 75%;
+    border-radius: 50%;
+    content: '';
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+  }
+
+  @keyframes load3 {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }

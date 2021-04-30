@@ -106,3 +106,10 @@
         mix-blend-mode: lighten;
     }
 }
+
+@mixin zoom-on-hover{
+    transition: all .3s;
+    &:hover{
+        transform: scale(1.01);
+    }
+}
