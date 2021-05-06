@@ -16,17 +16,13 @@
 <body>
     <div id="container">
         <!-- LOADER SPINNER -->
-        <!-- <img id="loader__logo" src="logo/ohmyfood@2x.svg" alt="Logo">
-        <div class="loader"></div> -->
-
-        <!-- LOADER PROGRESS-BAR -->
-        <img class="loader__logo" src="logo/ohmyfood@2x.svg" alt="Logo">
-        <div class="progress">
-            <div class="progress__bar">
-            </div>
-        </div>
+        <img id="loader__logo" src="logo/ohmyfood@2x.svg" alt="Logo">
+        <div class="loader"></div>
     </div>
     <div class="main-container">
+
+        <!-- HEADER -->
+
         <header class="header">
             <a href="#">
                 <img class="header__logo" src="logo/ohmyfood@2x.svg" alt="Logo">
@@ -34,6 +30,9 @@
         </header>
 
         <main class="main">
+
+            <!-- SECTION LOCALISATION -->
+
             <section class="section section-localisation">
                 <p class="section-localisation__localisation">
                     <i class="fas fa-map-marker-alt"></i>
@@ -42,9 +41,13 @@
                 <div class="section-localisation__recherche">
                     <h2>Réservez le menu qui vous convient</h2>
                     <p>Découvrez des restaurants d'exception, séléctionnés par nos soins.</p>
-                    <button class="section-localisation__btn btn--degrade">Explorer nos restaurants</button>
+                    <button type="button" class="section-localisation__btn btn--degrade">Explorer nos
+                        restaurants</button>
                 </div>
             </section>
+
+            <!-- SECTION FONCTIONNEMENT -->
+
             <section class="section section-fonctionnement">
                 <h2>Fonctionnement</h2>
                 <ol class="section-fonctionnement__list">
@@ -54,10 +57,14 @@
                     <li><span>3</span><a href="#"><i class="fas fa-store"></i> Dégustez au restaurant</a></li>
                 </ol>
             </section>
+
+            <!-- SECTION RESTAURANTS -->
+
             <section id="choix" class="section section-restaurants">
                 <h2>Restaurants</h2>
                 <ul class="section-restaurants__unordered-list">
-                    <li><a class="section-restaurants__card" href="menu/la-palette-du-gout.html">
+                    <li>
+                        <a class="section-restaurants__card" href="menu/la-palette-du-gout.html">
                             <span class="section-restaurants__btn btn--new">Nouveau</span>
                             <div class="image">
                                 <img src="img/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="">
@@ -70,8 +77,10 @@
                                     <i class="fas fa-heart like"></i>
                                 </div>
                             </div>
-                        </a></li>
-                    <li><a class="section-restaurants__card" href="menu/la-note-enchantee.html">
+                        </a>
+                    </li>
+                    <li>
+                        <a class="section-restaurants__card" href="menu/la-note-enchantee.html">
                             <span class="section-restaurants__btn btn--new">Nouveau</span>
                             <div class="image">
                                 <img class="la-note-enchantee" src="img/stil-u2Lp8tXIcjw-unsplash.jpg" alt="">
@@ -84,8 +93,10 @@
                                     <i class="fas fa-heart like"></i>
                                 </div>
                             </div>
-                        </a></li>
-                    <li><a class="section-restaurants__card" href="menu/a-la-francaise.html">
+                        </a>
+                    </li>
+                    <li>
+                        <a class="section-restaurants__card" href="menu/a-la-francaise.html">
                             <div class="image">
                                 <img src="img/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="">
                             </div>
@@ -97,8 +108,10 @@
                                     <i class="fas fa-heart like"></i>
                                 </div>
                             </div>
-                        </a></li>
-                    <li><a class="section-restaurants__card" href="menu/le-delice-des-sens.html">
+                        </a>
+                    </li>
+                    <li>
+                        <a class="section-restaurants__card" href="menu/le-delice-des-sens.html">
                             <div class="image">
                                 <img src="img/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="">
                             </div>
@@ -110,10 +123,13 @@
                                     <i class="fas fa-heart like"></i>
                                 </div>
                             </div>
-                        </a></li>
+                        </a>
+                    </li>
                 </ul>
             </section>
         </main>
+
+        <!-- FOOTER -->
 
         <footer class="footer">
             <h3 class="footer__title">ohmyfood</h3>
